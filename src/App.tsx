@@ -468,7 +468,7 @@ function App() {
       {/* Navigation */}
       <nav className="fixed top-0 left-0 w-full z-50 px-[4vw] py-6 flex items-center justify-between">
         <div className="font-display font-bold text-xl text-[var(--paper)] tracking-tight">
-          Impact Ledger
+          Tucson Impact Ledger
         </div>
         
         {/* Desktop Nav */}
@@ -537,13 +537,13 @@ function App() {
         <div className="relative z-10 text-center px-6">
           <div className="hero-headline-group">
             <h1 className="headline-1 text-[var(--paper)] max-w-[62vw] mx-auto">
-              <span className="hero-headline-1 block">See where your</span>
-              <span className="hero-headline-2 block">money goes.</span>
+              <span className="hero-headline-1 block">Keep Tucson</span>
+              <span className="hero-headline-2 block">thriving.</span>
             </h1>
           </div>
           
           <p className="hero-subheadline body-text text-[var(--text-secondary)] max-w-[44vw] mx-auto mt-6">
-            A simple dashboard that connects spending to the places you live.
+            Track your spending at local Old Pueblo businesses and watch your community impact grow.
           </p>
           
           <button 
@@ -580,10 +580,10 @@ function App() {
             <div>
               <span className="problem-card-content label-tag text-[var(--text-dark-secondary)]">Local</span>
               <h2 className="problem-card-content headline-1 text-[var(--text-dark)] mt-4">~68¢</h2>
-              <p className="problem-card-content headline-3 text-[var(--text-dark)] mt-2">stays in the community</p>
+              <p className="problem-card-content headline-3 text-[var(--text-dark)] mt-2">stays in Tucson</p>
             </div>
             <p className="problem-card-content body-text text-[var(--text-dark-secondary)] max-w-[80%]">
-              When you choose independent businesses, wages, supplies, and taxes recirculate.
+              Shop at Time Market, Exo Roast, or Antigone Books—wages, supplies, and taxes recirculate locally.
             </p>
             <div className="problem-card-content circular-icon mt-6 self-end">
               <RefreshCw size={24} className="text-[var(--charcoal)]" />
@@ -598,7 +598,7 @@ function App() {
               <p className="problem-card-content headline-3 text-[var(--text-dark)] mt-2">leaks to outside chains</p>
             </div>
             <p className="problem-card-content body-text text-[var(--text-dark-secondary)] max-w-[80%]">
-              Big-box spending often exits the neighborhood through distant supply chains.
+              Big-box spending leaves Tucson through distant corporate supply chains.
             </p>
             <div className="problem-card-content circular-icon mt-6 self-end opacity-50">
               <ExternalLink size={24} className="text-[var(--charcoal)]" />
@@ -625,10 +625,10 @@ function App() {
           <div>
             <span className="label-tag text-[var(--text-dark-secondary)]">Multiplier Effect</span>
             <h2 className="solution-headline headline-2 text-[var(--text-dark)] mt-6">
-              Local spending creates leverage.
+              Your dollars work harder in Tucson.
             </h2>
             <p className="solution-subheadline body-text text-[var(--text-dark-secondary)] max-w-[80%] mt-4">
-              Money recirculates through wages, suppliers, and public funds—often generating 2–3x local value.
+              Money spent on 4th Avenue, Congress Street, and Main Gate recirculates 2–3x through local wages and taxes.
             </p>
           </div>
           <div className="circular-icon mt-8 self-end">
@@ -657,7 +657,7 @@ function App() {
               Track. Categorize. Improve.
             </h2>
             <p className="feature-body body-text text-[var(--text-dark-secondary)] max-w-[80%] mt-4">
-              Connect accounts securely. Tag purchases as Local / Chain / Unknown. Set a monthly target—and watch your impact grow.
+              Connect accounts securely. Tag purchases as Tucson Local / Chain / Unknown. Set a monthly target—and watch your Old Pueblo impact grow.
             </p>
           </div>
           <div className="circular-icon mt-8 self-end">
@@ -685,10 +685,10 @@ function App() {
             <div>
               <span className="label-tag text-[var(--text-dark-secondary)]">Collective Goal</span>
               <h2 className="headline-2 text-[var(--text-dark)] mt-4">
-                Neighborhood goals.
+                Old Pueblo goals.
               </h2>
               <p className="body-text text-[var(--text-dark-secondary)] max-w-[90%] mt-4">
-                When 50 people shift just $50 to local businesses, it can fund a community project.
+                When 50 Tucsonans shift just $50 to local businesses, we can fund a mural in Barrio Viejo or support Tucson Meet Yourself.
               </p>
             </div>
             <div className="circular-icon mt-6 self-end">
@@ -701,7 +701,7 @@ function App() {
             <div>
               <span className="label-tag text-[var(--text-dark-secondary)]">This Quarter</span>
               <h2 className="headline-1 text-[var(--text-dark)] mt-4">$48,200</h2>
-              <p className="headline-3 text-[var(--text-dark)] mt-2">shifted to local</p>
+              <p className="headline-3 text-[var(--text-dark)] mt-2">shifted to Tucson businesses</p>
               
               {/* Progress bar */}
               <div className="mt-6">
@@ -711,7 +711,7 @@ function App() {
                     style={{ width: '72%', transformOrigin: 'left' }}
                   />
                 </div>
-                <p className="label-tag text-[var(--text-dark-secondary)] mt-3">72% toward the next project</p>
+                <p className="label-tag text-[var(--text-dark-secondary)] mt-3">72% toward our next Tucson project</p>
               </div>
             </div>
             <div className="circular-icon mt-6 self-end">
@@ -738,10 +738,10 @@ function App() {
           <div>
             <span className="story-content label-tag text-[var(--text-dark-secondary)]">Impact Narrative</span>
             <h2 className="story-content headline-2 text-[var(--text-dark)] mt-6">
-              Your monthly impact story.
+              Your Tucson impact story.
             </h2>
             <p className="story-content body-text text-[var(--text-dark-secondary)] max-w-[80%] mt-4">
-              Instead of charts alone, get a clear sentence: how many hours of local wages your spending supported—and what that means for your block.
+              Get a clear monthly story: how many hours of Tucson wages your spending supported—and what that means for your neighborhood.
             </p>
           </div>
           <div className="story-content circular-icon mt-8 self-end">
@@ -795,10 +795,10 @@ function App() {
                     />
                   </div>
                   <div>
-                    <label className="label-tag text-[var(--text-secondary)] mb-2 block">City</label>
+                    <label className="label-tag text-[var(--text-secondary)] mb-2 block">Neighborhood</label>
                     <input 
                       type="text" 
-                      placeholder="Your city"
+                      placeholder="Sam Hughes, Armory Park, Iron Horse..."
                       className="form-input"
                       required
                     />
@@ -807,7 +807,7 @@ function App() {
                     Join the list
                   </button>
                   <p className="text-xs text-[var(--text-secondary)] text-center mt-4">
-                    By joining, you agree to receive updates about Impact Ledger.
+                    By joining, you agree to receive updates about Tucson Impact Ledger.
                   </p>
                 </form>
               ) : (
@@ -857,10 +857,10 @@ function App() {
                   <Award size={28} className="text-[var(--charcoal)]" />
                 </div>
                 <h4 className="font-display font-bold text-lg text-[var(--text-dark)]">
-                  See collective wins.
+                  See Tucson wins.
                 </h4>
                 <p className="body-text text-[var(--text-dark-secondary)] mt-3 max-w-[80%] mx-auto">
-                  Watch your neighborhood&apos;s impact grow and celebrate milestones.
+                  Watch Tucson&apos;s collective impact grow and celebrate community milestones.
                 </p>
               </div>
             </div>
@@ -869,7 +869,7 @@ function App() {
           {/* Footer */}
           <footer className="mt-24 pt-8 border-t border-[var(--charcoal)]/10 flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="font-display font-bold text-lg text-[var(--text-dark)]">
-              Impact Ledger
+              Tucson Impact Ledger
             </div>
             <div className="flex items-center gap-6">
               <button className="text-sm text-[var(--text-dark-secondary)] hover:text-[var(--text-dark)] transition-colors">
@@ -883,7 +883,7 @@ function App() {
               </button>
             </div>
             <p className="text-sm text-[var(--text-dark-secondary)]">
-              © Impact Ledger
+              © Tucson Impact Ledger · Made with ❤️ in the Old Pueblo
             </p>
           </footer>
         </div>
