@@ -688,45 +688,156 @@ function App() {
               <button className="value-tag">LGBTQ+-Owned</button>
             </div>
             
-            {/* Sample Business Cards */}
+            {/* Business Cards - Row 1 */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
               <div className="business-card">
                 <div className="flex items-start justify-between">
                   <div>
                     <h4 className="font-display font-bold text-lg text-[var(--text-dark)]">Time Market</h4>
-                    <p className="text-sm text-[var(--text-dark-secondary)]">Cafe & Grocery</p>
+                    <p className="text-sm text-[var(--text-dark-secondary)]">Cafe & Grocery · University</p>
                   </div>
                   <span className="impact-badge">🌱 Eco</span>
                 </div>
                 <p className="text-sm text-[var(--text-dark-secondary)] mt-3">
-                  Local sourcing, living wages, and over 500 meals donated to community pantries this year.
+                  Sources 70% of produce from Arizona farms. Donated 500+ meals to Community Food Bank this year. All staff earn $18+/hour.
                 </p>
+                <div className="mt-4 pt-3 border-t border-[var(--charcoal)]/10">
+                  <p className="text-xs text-[var(--forest)] font-medium">🔄 Your $10 here = $6.80 staying in Tucson</p>
+                </div>
               </div>
               
               <div className="business-card">
                 <div className="flex items-start justify-between">
                   <div>
                     <h4 className="font-display font-bold text-lg text-[var(--text-dark)]">Antigone Books</h4>
-                    <p className="text-sm text-[var(--text-dark-secondary)]">Bookstore</p>
+                    <p className="text-sm text-[var(--text-dark-secondary)]">Bookstore · 4th Avenue</p>
                   </div>
                   <span className="impact-badge">👩 Woman</span>
                 </div>
                 <p className="text-sm text-[var(--text-dark-secondary)] mt-3">
-                  Woman-owned since 1973. Hosts 50+ community events annually supporting local authors.
+                  Woman-owned since 1973. Hosts 50+ free community events annually. Partners with Literacy Connects for youth reading programs.
                 </p>
+                <div className="mt-4 pt-3 border-t border-[var(--charcoal)]/10">
+                  <p className="text-xs text-[var(--forest)] font-medium">📚 Funded 200 books for TUSD classrooms</p>
+                </div>
               </div>
               
               <div className="business-card">
                 <div className="flex items-start justify-between">
                   <div>
                     <h4 className="font-display font-bold text-lg text-[var(--text-dark)]">Exo Roast Co.</h4>
-                    <p className="text-sm text-[var(--text-dark-secondary)]">Coffee</p>
+                    <p className="text-sm text-[var(--text-dark-secondary)]">Coffee · Downtown</p>
                   </div>
                   <span className="impact-badge">💰 Living Wage</span>
                 </div>
                 <p className="text-sm text-[var(--text-dark-secondary)] mt-3">
-                  Fair-trade beans, living wages for all staff, and 2% of profits to local arts programs.
+                  Fair-trade beans, $20/hour minimum wage. 2% of every sale funds Tucson Pima Arts Council grants for local artists.
                 </p>
+                <div className="mt-4 pt-3 border-t border-[var(--charcoal)]/10">
+                  <p className="text-xs text-[var(--forest)] font-medium">🎨 $12,000 to local artists this year</p>
+                </div>
+              </div>
+            </div>
+            
+            {/* Business Cards - Row 2 */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+              <div className="business-card">
+                <div className="flex items-start justify-between">
+                  <div>
+                    <h4 className="font-display font-bold text-lg text-[var(--text-dark)]">Barrio Bread</h4>
+                    <p className="text-sm text-[var(--text-dark-secondary)]">Bakery · Barrio Viejo</p>
+                  </div>
+                  <span className="impact-badge">🌾 Local Source</span>
+                </div>
+                <p className="text-sm text-[var(--text-dark-secondary)] mt-3">
+                  Heritage grains from Arizona farms. Trains formerly incarcerated individuals through baking apprenticeship program.
+                </p>
+                <div className="mt-4 pt-3 border-t border-[var(--charcoal)]/10">
+                  <p className="text-xs text-[var(--forest)] font-medium">👥 15 apprentices employed this year</p>
+                </div>
+              </div>
+              
+              <div className="business-card">
+                <div className="flex items-start justify-between">
+                  <div>
+                    <h4 className="font-display font-bold text-lg text-[var(--text-dark)]">Native Seeds/SEARCH</h4>
+                    <p className="text-sm text-[var(--text-dark-secondary)]">Seeds & Garden · Campbell</p>
+                  </div>
+                  <span className="impact-badge">🏜️ Indigenous</span>
+                </div>
+                <p className="text-sm text-[var(--text-dark-secondary)] mt-3">
+                  Preserves 2,000+ heritage seed varieties. Free seeds to Native American communities. Youth garden education programs.
+                </p>
+                <div className="mt-4 pt-3 border-t border-[var(--charcoal)]/10">
+                  <p className="text-xs text-[var(--forest)] font-medium">🌱 50,000 free seed packets distributed</p>
+                </div>
+              </div>
+              
+              <div className="business-card">
+                <div className="flex items-start justify-between">
+                  <div>
+                    <h4 className="font-display font-bold text-lg text-[var(--text-dark)]">Hotel Congress</h4>
+                    <p className="text-sm text-[var(--text-dark-secondary)]">Venue & Hotel · Downtown</p>
+                  </div>
+                  <span className="impact-badge">🎵 Arts</span>
+                </div>
+                <p className="text-sm text-[var(--text-dark-secondary)] mt-3">
+                  Hosts 300+ live music events yearly featuring Arizona artists. Pays performers 80% of door vs industry standard 50%.
+                </p>
+                <div className="mt-4 pt-3 border-t border-[var(--charcoal)]/10">
+                  <p className="text-xs text-[var(--forest)] font-medium">🎤 $180,000 paid to local musicians</p>
+                </div>
+              </div>
+            </div>
+            
+            {/* Business Cards - Row 3 */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+              <div className="business-card">
+                <div className="flex items-start justify-between">
+                  <div>
+                    <h4 className="font-display font-bold text-lg text-[var(--text-dark)]">Flores Concepts</h4>
+                    <p className="text-sm text-[var(--text-dark-secondary)]">Restaurants · Multiple</p>
+                  </div>
+                  <span className="impact-badge">🌮 BIPOC</span>
+                </div>
+                <p className="text-sm text-[var(--text-dark-secondary)] mt-3">
+                  Mexican-American owned. Employs 200+ locals at living wages. Sponsors youth culinary scholarships at Pima Community College.
+                </p>
+                <div className="mt-4 pt-3 border-t border-[var(--charcoal)]/10">
+                  <p className="text-xs text-[var(--forest)] font-medium">🎓 12 culinary scholarships funded</p>
+                </div>
+              </div>
+              
+              <div className="business-card">
+                <div className="flex items-start justify-between">
+                  <div>
+                    <h4 className="font-display font-bold text-lg text-[var(--text-dark)]">Tucson Hop Shop</h4>
+                    <p className="text-sm text-[var(--text-dark-secondary)]">Craft Beer · 4th Avenue</p>
+                  </div>
+                  <span className="impact-badge">🏳️‍🌈 LGBTQ+</span>
+                </div>
+                <p className="text-sm text-[var(--text-dark-secondary)] mt-3">
+                  LGBTQ+ owned safe space. 100% Arizona craft beers. Monthly fundraisers for Southern Arizona AIDS Foundation.
+                </p>
+                <div className="mt-4 pt-3 border-t border-[var(--charcoal)]/10">
+                  <p className="text-xs text-[var(--forest)] font-medium">❤️ $8,500 raised for SAAF</p>
+                </div>
+              </div>
+              
+              <div className="business-card">
+                <div className="flex items-start justify-between">
+                  <div>
+                    <h4 className="font-display font-bold text-lg text-[var(--text-dark)]">Iskashitaa Refugee Network</h4>
+                    <p className="text-sm text-[var(--text-dark-secondary)]">Food Rescue · Citywide</p>
+                  </div>
+                  <span className="impact-badge">🤝 Nonprofit</span>
+                </div>
+                <p className="text-sm text-[var(--text-dark-secondary)] mt-3">
+                  Refugee-led food rescue. Harvests 100,000+ lbs of fruit annually from Tucson yards. Sells preserves to fund job training.
+                </p>
+                <div className="mt-4 pt-3 border-t border-[var(--charcoal)]/10">
+                  <p className="text-xs text-[var(--forest)] font-medium">🍊 80 refugee families employed</p>
+                </div>
               </div>
             </div>
           </div>
@@ -751,16 +862,24 @@ function App() {
         {/* Cards */}
         <div className="relative z-10 w-full px-[6vw] flex flex-col md:flex-row gap-6 items-center justify-center">
           {/* Left card - Meet the Maker */}
-          <div className="collective-card-left paper-card w-full md:w-[42vw] h-auto md:h-[64vh] p-8 md:p-10 flex flex-col justify-between">
+          <div className="collective-card-left paper-card w-full md:w-[42vw] h-auto md:h-auto p-8 md:p-10 flex flex-col justify-between">
             <div>
               <span className="label-tag text-[var(--text-dark-secondary)]">Meet the Maker</span>
               <h2 className="headline-2 text-[var(--text-dark)] mt-4">
-                Maria's Story
+                Don Guerra, Barrio Bread
               </h2>
               <p className="body-text text-[var(--text-dark-secondary)] max-w-[90%] mt-4">
-                "I started Café Con Leche in 2018 with $500 and a dream. Today we employ 12 neighbors and source 80% of ingredients from Arizona farms. Growth means more jobs staying in our barrio."
+                "I started baking in my backyard because I believed Tucson deserved better bread. Now we employ 20 people from our neighborhood—many who faced barriers to employment. Every loaf we sell funds job training for someone rebuilding their life."
               </p>
-              <p className="label-tag text-[var(--terracotta)] mt-6">— Maria Gonzalez, Café Con Leche</p>
+              <div className="mt-6 p-4 bg-[var(--forest)]/10 rounded-xl">
+                <p className="text-sm font-medium text-[var(--forest)]">Community Impact:</p>
+                <ul className="text-sm text-[var(--text-dark-secondary)] mt-2 space-y-1">
+                  <li>• 15 formerly incarcerated individuals trained</li>
+                  <li>• 100% Arizona heritage grains</li>
+                  <li>• $85,000 in local wages annually</li>
+                </ul>
+              </div>
+              <p className="label-tag text-[var(--terracotta)] mt-6">— Don Guerra, Barrio Bread</p>
             </div>
             <div className="circular-icon mt-6 self-end">
               <Users size={24} className="text-[var(--forest)]" />
@@ -768,11 +887,30 @@ function App() {
           </div>
           
           {/* Right card - Community Impact */}
-          <div className="collective-card-right paper-card w-full md:w-[42vw] h-auto md:h-[64vh] p-8 md:p-10 flex flex-col justify-between">
+          <div className="collective-card-right paper-card w-full md:w-[42vw] h-auto md:h-auto p-8 md:p-10 flex flex-col justify-between">
             <div>
-              <span className="label-tag text-[var(--text-dark-secondary)]">Community Impact</span>
-              <h2 className="headline-1 text-[var(--text-dark)] mt-4">$48,200</h2>
-              <p className="headline-3 text-[var(--text-dark)] mt-2">shifted to Tucson businesses</p>
+              <span className="label-tag text-[var(--text-dark-secondary)]">Collective Giving</span>
+              <h2 className="headline-2 text-[var(--text-dark)] mt-4">What our directory businesses gave back in 2025:</h2>
+              
+              {/* Impact stats */}
+              <div className="grid grid-cols-2 gap-4 mt-6">
+                <div className="p-4 bg-[var(--terracotta)]/10 rounded-xl text-center">
+                  <p className="headline-3 text-[var(--terracotta)]">$287K</p>
+                  <p className="text-xs text-[var(--text-dark-secondary)] mt-1">Local wages above min</p>
+                </div>
+                <div className="p-4 bg-[var(--forest)]/10 rounded-xl text-center">
+                  <p className="headline-3 text-[var(--forest)]">2,400</p>
+                  <p className="text-xs text-[var(--text-dark-secondary)] mt-1">Meals donated</p>
+                </div>
+                <div className="p-4 bg-[var(--ochre)]/15 rounded-xl text-center">
+                  <p className="headline-3 text-[var(--ochre)]">$45K</p>
+                  <p className="text-xs text-[var(--text-dark-secondary)] mt-1">Arts & education grants</p>
+                </div>
+                <div className="p-4 bg-[var(--sage)]/20 rounded-xl text-center">
+                  <p className="headline-3 text-[var(--forest)]">156</p>
+                  <p className="text-xs text-[var(--text-dark-secondary)] mt-1">Jobs for neighbors</p>
+                </div>
+              </div>
               
               {/* Progress bar */}
               <div className="mt-6">
@@ -878,7 +1016,7 @@ function App() {
             {/* Right - Form */}
             <div className="join-form-card dark-card w-full md:w-[38vw] p-8 md:p-10">
               {!formSubmitted ? (
-                <form onSubmit={handleFormSubmit} className="space-y-6">
+                <form onSubmit={handleFormSubmit} className="space-y-5">
                   <div>
                     <label className="label-tag text-[var(--text-secondary)] mb-2 block">Business Name</label>
                     <input 
@@ -898,10 +1036,33 @@ function App() {
                     />
                   </div>
                   <div>
-                    <label className="label-tag text-[var(--text-secondary)] mb-2 block">Why nominate them?</label>
+                    <label className="label-tag text-[var(--text-secondary)] mb-2 block">What values apply?</label>
+                    <div className="flex flex-wrap gap-2 mt-2">
+                      <label className="flex items-center gap-2 text-sm text-[var(--text-secondary)] cursor-pointer">
+                        <input type="checkbox" className="accent-[var(--terracotta)]" /> Living Wage
+                      </label>
+                      <label className="flex items-center gap-2 text-sm text-[var(--text-secondary)] cursor-pointer">
+                        <input type="checkbox" className="accent-[var(--terracotta)]" /> Local Sourcing
+                      </label>
+                      <label className="flex items-center gap-2 text-sm text-[var(--text-secondary)] cursor-pointer">
+                        <input type="checkbox" className="accent-[var(--terracotta)]" /> Eco-Friendly
+                      </label>
+                      <label className="flex items-center gap-2 text-sm text-[var(--text-secondary)] cursor-pointer">
+                        <input type="checkbox" className="accent-[var(--terracotta)]" /> Woman-Owned
+                      </label>
+                      <label className="flex items-center gap-2 text-sm text-[var(--text-secondary)] cursor-pointer">
+                        <input type="checkbox" className="accent-[var(--terracotta)]" /> BIPOC-Owned
+                      </label>
+                      <label className="flex items-center gap-2 text-sm text-[var(--text-secondary)] cursor-pointer">
+                        <input type="checkbox" className="accent-[var(--terracotta)]" /> LGBTQ+-Owned
+                      </label>
+                    </div>
+                  </div>
+                  <div>
+                    <label className="label-tag text-[var(--text-secondary)] mb-2 block">How do they give back?</label>
                     <textarea 
-                      placeholder="Tell us why this business deserves recognition..."
-                      className="form-input min-h-[100px] resize-none"
+                      placeholder="e.g., Donates meals to food bank, sponsors youth programs, pays above minimum wage..."
+                      className="form-input min-h-[80px] resize-none"
                       required
                     />
                   </div>
@@ -917,7 +1078,7 @@ function App() {
                     Submit Nomination
                   </button>
                   <p className="text-xs text-[var(--text-secondary)] text-center mt-4">
-                    We'll review nominations and reach out to the business for verification.
+                    We'll verify community impact before adding to the directory.
                   </p>
                 </form>
               ) : (
