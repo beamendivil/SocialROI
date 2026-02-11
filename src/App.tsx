@@ -95,6 +95,9 @@ function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
   
+  // Use BASE_URL for GitHub Pages compatibility
+  const heroImage = `${import.meta.env.BASE_URL}hero-city.jpg`;
+  
   // Refs for sections
   const heroRef = useRef<HTMLDivElement>(null);
   const problemRef = useRef<HTMLDivElement>(null);
@@ -525,8 +528,8 @@ function App() {
         {/* Background image */}
         <div className="hero-bg absolute inset-0">
           <img 
-            src="/hero-city.jpg" 
-            alt="City skyline" 
+            src={heroImage} 
+            alt="Tucson skyline" 
             className="w-full h-full object-cover"
           />
           <div className="dark-scrim" />
@@ -566,7 +569,7 @@ function App() {
         {/* Background */}
         <div className="absolute inset-0">
           <img 
-            src="/hero-city.jpg" 
+            src={heroImage} 
             alt="" 
             className="w-full h-full object-cover opacity-40"
           />
@@ -612,7 +615,7 @@ function App() {
         {/* Background */}
         <div className="absolute inset-0">
           <img 
-            src="/hero-city.jpg" 
+            src={heroImage} 
             alt="" 
             className="w-full h-full object-cover opacity-30"
           />
@@ -642,7 +645,7 @@ function App() {
         {/* Background */}
         <div className="absolute inset-0">
           <img 
-            src="/hero-city.jpg" 
+            src={heroImage} 
             alt="" 
             className="w-full h-full object-cover opacity-25"
           />
@@ -671,7 +674,7 @@ function App() {
         {/* Background */}
         <div className="absolute inset-0">
           <img 
-            src="/hero-city.jpg" 
+            src={heroImage} 
             alt="" 
             className="w-full h-full object-cover opacity-20"
           />
@@ -726,7 +729,7 @@ function App() {
         {/* Background */}
         <div className="absolute inset-0">
           <img 
-            src="/hero-city.jpg" 
+            src={heroImage} 
             alt="" 
             className="w-full h-full object-cover opacity-15"
           />
