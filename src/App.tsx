@@ -149,7 +149,7 @@ function App() {
     return () => ctx.revert();
   }, []);
   
-  // Scroll-driven animations
+  // Scroll-driven animations - simplified for natural flow
   useLayoutEffect(() => {
     const gsap = window.gsap;
     const ScrollTrigger = window.ScrollTrigger;
@@ -159,213 +159,97 @@ function App() {
     gsap.registerPlugin(ScrollTrigger);
     
     const ctx = gsap.context(() => {
-      // Hero scroll animation (exit only)
-      const heroScrollTl = gsap.timeline({
+      // Hero parallax (subtle, no pin)
+      gsap.to('.hero-bg', {
+        yPercent: 30,
+        scale: 1.1,
         scrollTrigger: {
           trigger: heroRef.current,
           start: 'top top',
-          end: '+=130%',
-          pin: true,
-          scrub: 0.6,
-          onLeaveBack: () => {
-            // Reset hero elements when scrolling back to top
-            gsap.set('.hero-headline-group', { opacity: 1, y: 0, scale: 1 });
-            gsap.set('.hero-cta', { opacity: 1, y: 0 });
-            gsap.set('.hero-bg', { scale: 1, y: 0 });
+          end: 'bottom top',
+          scrub: true,
+        }
+      });
+      
+      gsap.to('.hero-headline-group', {
+        y: -100,
+        opacity: 0,
+        scrollTrigger: {
+          trigger: heroRef.current,
+          start: 'top top',
+          end: '60% top',
+          scrub: true,
+        }
+      });
+      
+      // Simple fade-in animations for all sections
+      const fadeInElements = [
+        '.problem-card-left',
+        '.problem-card-right', 
+        '.solution-card',
+        '.feature-card',
+        '.collective-card-left',
+        '.collective-card-right',
+        '.story-card',
+        '.join-form-card',
+        '.how-it-works-card'
+      ];
+      
+      fadeInElements.forEach(selector => {
+        const el = document.querySelector(selector);
+        if (el) {
+          gsap.fromTo(el,
+            { y: 60, opacity: 0 },
+            {
+              y: 0,
+              opacity: 1,
+              duration: 0.8,
+              ease: 'power2.out',
+              scrollTrigger: {
+                trigger: el,
+                start: 'top 85%',
+                toggleActions: 'play none none reverse'
+              }
+            }
+          );
+        }
+      });
+      
+      // Stagger business cards
+      gsap.fromTo('.business-card',
+        { y: 40, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          stagger: 0.1,
+          duration: 0.6,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: '#directory',
+            start: 'top 70%',
+            toggleActions: 'play none none reverse'
           }
         }
-      });
+      );
       
-      heroScrollTl
-        .fromTo('.hero-headline-group', 
-          { opacity: 1, y: 0, scale: 1 }, 
-          { opacity: 0, y: '-10vh', scale: 0.98, ease: 'power2.in' }, 
-          0.7
-        )
-        .fromTo('.hero-cta', 
-          { opacity: 1, y: 0 }, 
-          { opacity: 0, y: '-6vh', ease: 'power2.in' }, 
-          0.7
-        )
-        .fromTo('.hero-bg', 
-          { scale: 1, y: 0 }, 
-          { scale: 1.05, y: '-4vh', ease: 'power2.in' }, 
-          0.7
-        );
-      
-      // Section 2: Problem (two cards)
-      const problemTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: problemRef.current,
-          start: 'top top',
-          end: '+=130%',
-          pin: true,
-          scrub: 0.6,
+      // Stagger grassroots org cards
+      gsap.fromTo('#community-roots .paper-card',
+        { y: 40, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          stagger: 0.08,
+          duration: 0.6,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: '#community-roots',
+            start: 'top 70%',
+            toggleActions: 'play none none reverse'
+          }
         }
-      });
+      );
       
-      problemTl
-        // Entrance
-        .fromTo('.problem-card-left', 
-          { x: '-60vw', opacity: 0, rotate: -2, scale: 0.96 }, 
-          { x: 0, opacity: 1, rotate: 0, scale: 1, ease: 'none' }, 
-          0
-        )
-        .fromTo('.problem-card-right', 
-          { x: '60vw', opacity: 0, rotate: 2, scale: 0.96 }, 
-          { x: 0, opacity: 1, rotate: 0, scale: 1, ease: 'none' }, 
-          0.05
-        )
-        .fromTo('.problem-card-content', 
-          { y: 18, opacity: 0 }, 
-          { y: 0, opacity: 1, stagger: 0.02, ease: 'none' }, 
-          0.1
-        )
-        // Exit
-        .fromTo('.problem-card-left', 
-          { x: 0, opacity: 1, rotate: 0 }, 
-          { x: '-18vw', opacity: 0, rotate: -1, ease: 'power2.in' }, 
-          0.7
-        )
-        .fromTo('.problem-card-right', 
-          { x: 0, opacity: 1, rotate: 0 }, 
-          { x: '18vw', opacity: 0, rotate: 1, ease: 'power2.in' }, 
-          0.7
-        );
-      
-      // Section 3: Solution (single card)
-      const solutionTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: solutionRef.current,
-          start: 'top top',
-          end: '+=130%',
-          pin: true,
-          scrub: 0.6,
-        }
-      });
-      
-      solutionTl
-        .fromTo('.solution-card', 
-          { y: '100vh', opacity: 0, scale: 0.92 }, 
-          { y: 0, opacity: 1, scale: 1, ease: 'none' }, 
-          0
-        )
-        .fromTo('.solution-headline', 
-          { x: '-10vw', opacity: 0 }, 
-          { x: 0, opacity: 1, ease: 'none' }, 
-          0.12
-        )
-        .fromTo('.solution-subheadline', 
-          { x: '-6vw', opacity: 0 }, 
-          { x: 0, opacity: 1, ease: 'none' }, 
-          0.18
-        )
-        .fromTo('.solution-card', 
-          { y: 0, opacity: 1, scale: 1 }, 
-          { y: '-40vh', opacity: 0, scale: 0.98, ease: 'power2.in' }, 
-          0.7
-        );
-      
-      // Section 4: Feature
-      const featureTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: featureRef.current,
-          start: 'top top',
-          end: '+=130%',
-          pin: true,
-          scrub: 0.6,
-        }
-      });
-      
-      featureTl
-        .fromTo('.feature-card', 
-          { x: '60vw', opacity: 0, rotate: 2 }, 
-          { x: 0, opacity: 1, rotate: 0, ease: 'none' }, 
-          0
-        )
-        .fromTo('.feature-headline', 
-          { y: 22, opacity: 0 }, 
-          { y: 0, opacity: 1, ease: 'none' }, 
-          0.1
-        )
-        .fromTo('.feature-body', 
-          { y: 16, opacity: 0 }, 
-          { y: 0, opacity: 1, ease: 'none' }, 
-          0.15
-        )
-        .fromTo('.feature-card', 
-          { x: 0, opacity: 1, rotate: 0 }, 
-          { x: '-18vw', opacity: 0, rotate: -1, ease: 'power2.in' }, 
-          0.7
-        );
-      
-      // Section 5: Collective
-      const collectiveTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: collectiveRef.current,
-          start: 'top top',
-          end: '+=130%',
-          pin: true,
-          scrub: 0.6,
-        }
-      });
-      
-      collectiveTl
-        .fromTo('.collective-card-left', 
-          { x: '-60vw', opacity: 0, rotate: -2 }, 
-          { x: 0, opacity: 1, rotate: 0, ease: 'none' }, 
-          0
-        )
-        .fromTo('.collective-card-right', 
-          { x: '60vw', opacity: 0, rotate: 2 }, 
-          { x: 0, opacity: 1, rotate: 0, ease: 'none' }, 
-          0.08
-        )
-        .fromTo('.collective-progress', 
-          { scaleX: 0, opacity: 0 }, 
-          { scaleX: 1, opacity: 1, ease: 'none' }, 
-          0.18
-        )
-        .fromTo('.collective-card-left', 
-          { y: 0, opacity: 1 }, 
-          { y: '-30vh', opacity: 0, ease: 'power2.in' }, 
-          0.7
-        )
-        .fromTo('.collective-card-right', 
-          { y: 0, opacity: 1 }, 
-          { y: '-30vh', opacity: 0, ease: 'power2.in' }, 
-          0.72
-        );
-      
-      // Section 6: Story
-      const storyTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: storyRef.current,
-          start: 'top top',
-          end: '+=130%',
-          pin: true,
-          scrub: 0.6,
-        }
-      });
-      
-      storyTl
-        .fromTo('.story-card', 
-          { x: '-60vw', opacity: 0, rotate: -2 }, 
-          { x: 0, opacity: 1, rotate: 0, ease: 'none' }, 
-          0
-        )
-        .fromTo('.story-content', 
-          { y: 20, opacity: 0 }, 
-          { y: 0, opacity: 1, stagger: 0.03, ease: 'none' }, 
-          0.1
-        )
-        .fromTo('.story-card', 
-          { y: 0, opacity: 1, scale: 1 }, 
-          { y: '-40vh', opacity: 0, scale: 0.98, ease: 'power2.in' }, 
-          0.7
-        );
-      
-      // Section 7: Join (flowing, not pinned)
+      // Join section elements
       gsap.fromTo('.join-headline', 
         { y: 24, opacity: 0 }, 
         { 
@@ -379,70 +263,6 @@ function App() {
           }
         }
       );
-      
-      gsap.fromTo('.join-form-card', 
-        { x: '10vw', opacity: 0 }, 
-        { 
-          x: 0, 
-          opacity: 1, 
-          duration: 0.8,
-          scrollTrigger: {
-            trigger: '.join-form-card',
-            start: 'top 80%',
-            toggleActions: 'play none none reverse'
-          }
-        }
-      );
-      
-      gsap.fromTo('.how-it-works-card', 
-        { y: 40, opacity: 0, scale: 0.98 }, 
-        { 
-          y: 0, 
-          opacity: 1, 
-          scale: 1,
-          stagger: 0.1,
-          duration: 0.6,
-          scrollTrigger: {
-            trigger: '.how-it-works-section',
-            start: 'top 80%',
-            toggleActions: 'play none none reverse'
-          }
-        }
-      );
-      
-      // Global snap for pinned sections
-      const pinned = ScrollTrigger.getAll()
-        .filter((st: ScrollTriggerInstance) => st.vars.pin)
-        .sort((a: ScrollTriggerInstance, b: ScrollTriggerInstance) => a.start - b.start);
-      
-      const maxScroll = ScrollTrigger.maxScroll(window);
-      if (maxScroll && pinned.length > 0) {
-        const pinnedRanges = pinned.map((st: ScrollTriggerInstance) => ({
-          start: st.start / maxScroll,
-          end: (st.end ?? st.start) / maxScroll,
-          center: (st.start + ((st.end ?? st.start) - st.start) * 0.5) / maxScroll,
-        }));
-        
-        ScrollTrigger.create({
-          snap: {
-            snapTo: (value: number) => {
-              const inPinned = pinnedRanges.some((r: { start: number; end: number }) => 
-                value >= r.start - 0.08 && value <= r.end + 0.08
-              );
-              if (!inPinned) return value;
-              
-              const target = pinnedRanges.reduce((closest: number, r: { center: number }) =>
-                Math.abs(r.center - value) < Math.abs(closest - value) ? r.center : closest,
-                pinnedRanges[0]?.center ?? 0
-              );
-              return target;
-            },
-            duration: { min: 0.15, max: 0.35 },
-            delay: 0,
-            ease: 'power2.out'
-          }
-        });
-      }
     });
     
     return () => ctx.revert();
@@ -528,7 +348,7 @@ function App() {
       )}
       
       {/* Section 1: Hero */}
-      <section ref={heroRef} className="section-pinned z-10">
+      <section ref={heroRef} className="section-hero z-10">
         {/* Background image */}
         <div className="hero-bg absolute inset-0">
           <img 
@@ -569,7 +389,7 @@ function App() {
       </section>
       
       {/* Section 2: Why Local */}
-      <section ref={problemRef} id="why-local" className="section-pinned z-20">
+      <section ref={problemRef} id="why-local" className="section-flow z-20 bg-[var(--charcoal)]">
         {/* Background */}
         <div className="absolute inset-0">
           <img 
@@ -615,7 +435,7 @@ function App() {
       </section>
       
       {/* Section 3: Our Standards */}
-      <section ref={solutionRef} id="standards" className="section-pinned z-30">
+      <section ref={solutionRef} id="standards" className="section-flow z-30 bg-[var(--charcoal)]">
         {/* Background */}
         <div className="absolute inset-0">
           <img 
@@ -665,7 +485,7 @@ function App() {
       </section>
       
       {/* Section 4: Directory */}
-      <section ref={featureRef} id="directory" className="section-pinned z-40">
+      <section ref={featureRef} id="directory" className="section-flow z-40 bg-[var(--charcoal)] py-20">
         {/* Background */}
         <div className="absolute inset-0">
           <img 
@@ -854,7 +674,7 @@ function App() {
       </section>
 
       {/* Section: Community Roots - Grassroots Organizations */}
-      <section id="community-roots" className="section-pinned z-50 bg-[var(--sage)]/20">
+      <section id="community-roots" className="section-flow z-50 bg-[var(--sage)]/20 py-20">
         <div className="w-full px-[6vw]">
           <div className="text-center mb-12">
             <span className="label-tag text-[var(--forest)]">Beyond Commerce</span>
@@ -1012,7 +832,7 @@ function App() {
       </section>
       
       {/* Section 5: Impact Stories */}
-      <section ref={collectiveRef} id="stories" className="section-pinned z-50">
+      <section ref={collectiveRef} id="stories" className="section-flow z-50 bg-[var(--charcoal)] py-20">
         {/* Background */}
         <div className="absolute inset-0">
           <img 
@@ -1095,7 +915,7 @@ function App() {
       </section>
       
       {/* Section 6: Local Circularity */}
-      <section ref={storyRef} id="circularity" className="section-pinned z-[60]">
+      <section ref={storyRef} id="circularity" className="section-flow z-[60] bg-[var(--charcoal)] py-20">
         {/* Background */}
         <div className="absolute inset-0">
           <img 
