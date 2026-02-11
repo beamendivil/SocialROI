@@ -3,14 +3,12 @@ import {
   RefreshCw, 
   ExternalLink, 
   TrendingUp, 
-  ListChecks, 
   Users, 
   Target, 
   FileText,
   Menu,
   X,
   Wallet,
-  Tag,
   Award
 } from 'lucide-react';
 
@@ -471,22 +469,22 @@ function App() {
       {/* Navigation */}
       <nav className="fixed top-0 left-0 w-full z-50 px-[4vw] py-6 flex items-center justify-between">
         <div className="font-display font-bold text-xl text-[var(--paper)] tracking-tight">
-          Tucson Impact Ledger
+          Tucson Local
         </div>
         
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
-          <button onClick={() => scrollToSection('solution')} className="text-[var(--text-secondary)] hover:text-[var(--paper)] transition-colors text-sm font-medium">
-            How it works
+          <button onClick={() => scrollToSection('directory')} className="text-[var(--text-secondary)] hover:text-[var(--paper)] transition-colors text-sm font-medium">
+            Directory
           </button>
-          <button onClick={() => scrollToSection('feature')} className="text-[var(--text-secondary)] hover:text-[var(--paper)] transition-colors text-sm font-medium">
-            Features
+          <button onClick={() => scrollToSection('stories')} className="text-[var(--text-secondary)] hover:text-[var(--paper)] transition-colors text-sm font-medium">
+            Impact Stories
           </button>
-          <button onClick={() => scrollToSection('collective')} className="text-[var(--text-secondary)] hover:text-[var(--paper)] transition-colors text-sm font-medium">
-            Community
+          <button onClick={() => scrollToSection('why-local')} className="text-[var(--text-secondary)] hover:text-[var(--paper)] transition-colors text-sm font-medium">
+            Why Local?
           </button>
-          <button onClick={() => scrollToSection('join')} className="text-[var(--text-secondary)] hover:text-[var(--paper)] transition-colors text-sm font-medium">
-            Join
+          <button onClick={() => scrollToSection('nominate')} className="text-[var(--text-secondary)] hover:text-[var(--paper)] transition-colors text-sm font-medium">
+            Nominate
           </button>
         </div>
         
@@ -502,20 +500,20 @@ function App() {
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-40 bg-[var(--charcoal)] flex flex-col items-center justify-center gap-8">
-          <button onClick={() => scrollToSection('solution')} className="text-[var(--paper)] text-2xl font-display font-bold">
-            How it works
+          <button onClick={() => scrollToSection('directory')} className="text-[var(--paper)] text-2xl font-display font-bold">
+            Directory
           </button>
-          <button onClick={() => scrollToSection('feature')} className="text-[var(--paper)] text-2xl font-display font-bold">
-            Features
+          <button onClick={() => scrollToSection('stories')} className="text-[var(--paper)] text-2xl font-display font-bold">
+            Impact Stories
           </button>
-          <button onClick={() => scrollToSection('collective')} className="text-[var(--paper)] text-2xl font-display font-bold">
-            Community
+          <button onClick={() => scrollToSection('why-local')} className="text-[var(--paper)] text-2xl font-display font-bold">
+            Why Local?
           </button>
-          <button onClick={() => scrollToSection('join')} className="text-[var(--paper)] text-2xl font-display font-bold">
-            Join
+          <button onClick={() => scrollToSection('nominate')} className="text-[var(--paper)] text-2xl font-display font-bold">
+            Nominate
           </button>
           <button 
-            onClick={() => scrollToSection('join')} 
+            onClick={() => scrollToSection('nominate')} 
             className="cta-button-paper mt-8"
           >
             Request early access
@@ -529,7 +527,7 @@ function App() {
         <div className="hero-bg absolute inset-0">
           <img 
             src={heroImage} 
-            alt="Tucson skyline" 
+            alt="Tucson landscape" 
             className="w-full h-full object-cover"
           />
           <div className="dark-scrim" />
@@ -539,33 +537,33 @@ function App() {
         {/* Content */}
         <div className="relative z-10 text-center px-6">
           <div className="hero-headline-group">
-            <h1 className="headline-1 text-[var(--paper)] max-w-[62vw] mx-auto">
-              <span className="hero-headline-1 block">Keep Tucson</span>
-              <span className="hero-headline-2 block">thriving.</span>
+            <h1 className="headline-1 text-[var(--paper)] max-w-[68vw] mx-auto">
+              <span className="hero-headline-1 block">Your spending</span>
+              <span className="hero-headline-2 block">is your vote.</span>
             </h1>
           </div>
           
-          <p className="hero-subheadline body-text text-[var(--text-secondary)] max-w-[44vw] mx-auto mt-6">
-            Track your spending at local Old Pueblo businesses and watch your community impact grow.
+          <p className="hero-subheadline body-text text-[var(--text-secondary)] max-w-[48vw] mx-auto mt-6">
+            Find local Tucson businesses investing back into our community. Conscious commerce starts here.
           </p>
           
           <button 
-            onClick={() => scrollToSection('join')}
+            onClick={() => scrollToSection('directory')}
             className="hero-cta cta-button mt-10"
           >
-            Request early access
+            Explore the Directory
           </button>
         </div>
         
         {/* Scroll hint */}
         <div className="hero-scroll-hint absolute bottom-[8vh] left-1/2 -translate-x-1/2 text-center">
-          <span className="label-tag text-[var(--text-secondary)]">Scroll to explore</span>
+          <span className="label-tag text-[var(--text-secondary)]">Discover local</span>
           <div className="w-px h-8 bg-[var(--text-secondary)] mx-auto mt-3 opacity-50" />
         </div>
       </section>
       
-      {/* Section 2: Problem */}
-      <section ref={problemRef} id="problem" className="section-pinned z-20">
+      {/* Section 2: Why Local */}
+      <section ref={problemRef} id="why-local" className="section-pinned z-20">
         {/* Background */}
         <div className="absolute inset-0">
           <img 
@@ -581,7 +579,7 @@ function App() {
           {/* Left card - Local */}
           <div className="problem-card-left paper-card w-full md:w-[42vw] h-auto md:h-[64vh] p-8 md:p-10 flex flex-col justify-between">
             <div>
-              <span className="problem-card-content label-tag text-[var(--text-dark-secondary)]">Local</span>
+              <span className="problem-card-content label-tag text-[var(--text-dark-secondary)]">Local Impact</span>
               <h2 className="problem-card-content headline-1 text-[var(--text-dark)] mt-4">~68¢</h2>
               <p className="problem-card-content headline-3 text-[var(--text-dark)] mt-2">stays in Tucson</p>
             </div>
@@ -589,16 +587,16 @@ function App() {
               Shop at Time Market, Exo Roast, or Antigone Books—wages, supplies, and taxes recirculate locally.
             </p>
             <div className="problem-card-content circular-icon mt-6 self-end">
-              <RefreshCw size={24} className="text-[var(--charcoal)]" />
+              <RefreshCw size={24} className="text-[var(--forest)]" />
             </div>
           </div>
           
           {/* Right card - Outside */}
           <div className="problem-card-right paper-card w-full md:w-[42vw] h-auto md:h-[64vh] p-8 md:p-10 flex flex-col justify-between">
             <div>
-              <span className="problem-card-content label-tag text-[var(--text-dark-secondary)]">Outside</span>
+              <span className="problem-card-content label-tag text-[var(--text-dark-secondary)]">Chain Leakage</span>
               <h2 className="problem-card-content headline-1 text-[var(--text-dark)] mt-4">~32¢</h2>
-              <p className="problem-card-content headline-3 text-[var(--text-dark)] mt-2">leaks to outside chains</p>
+              <p className="problem-card-content headline-3 text-[var(--text-dark)] mt-2">exits the community</p>
             </div>
             <p className="problem-card-content body-text text-[var(--text-dark-secondary)] max-w-[80%]">
               Big-box spending leaves Tucson through distant corporate supply chains.
@@ -610,8 +608,8 @@ function App() {
         </div>
       </section>
       
-      {/* Section 3: Solution */}
-      <section ref={solutionRef} id="solution" className="section-pinned z-30">
+      {/* Section 3: Our Standards */}
+      <section ref={solutionRef} id="standards" className="section-pinned z-30">
         {/* Background */}
         <div className="absolute inset-0">
           <img 
@@ -624,24 +622,44 @@ function App() {
         </div>
         
         {/* Card */}
-        <div className="solution-card paper-card w-[84vw] md:w-[74vw] h-auto md:h-[62vh] p-8 md:p-12 flex flex-col justify-between relative z-10">
+        <div className="solution-card paper-card w-[84vw] md:w-[74vw] h-auto md:h-auto p-8 md:p-12 flex flex-col justify-between relative z-10">
           <div>
-            <span className="label-tag text-[var(--text-dark-secondary)]">Multiplier Effect</span>
+            <span className="label-tag text-[var(--text-dark-secondary)]">Our Standards</span>
             <h2 className="solution-headline headline-2 text-[var(--text-dark)] mt-6">
-              Your dollars work harder in Tucson.
+              How we vet businesses.
             </h2>
             <p className="solution-subheadline body-text text-[var(--text-dark-secondary)] max-w-[80%] mt-4">
-              Money spent on 4th Avenue, Congress Street, and Main Gate recirculates 2–3x through local wages and taxes.
+              Every business in our directory is evaluated on values that matter to the community.
             </p>
+            
+            {/* Standards grid */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+              <div className="p-4 bg-[var(--forest)]/10 rounded-xl text-center">
+                <div className="text-2xl mb-2">💰</div>
+                <p className="text-sm font-medium text-[var(--text-dark)]">Living Wage Employer</p>
+              </div>
+              <div className="p-4 bg-[var(--forest)]/10 rounded-xl text-center">
+                <div className="text-2xl mb-2">🌱</div>
+                <p className="text-sm font-medium text-[var(--text-dark)]">Sustainable Sourcing</p>
+              </div>
+              <div className="p-4 bg-[var(--forest)]/10 rounded-xl text-center">
+                <div className="text-2xl mb-2">🤝</div>
+                <p className="text-sm font-medium text-[var(--text-dark)]">Community Reinvestment</p>
+              </div>
+              <div className="p-4 bg-[var(--forest)]/10 rounded-xl text-center">
+                <div className="text-2xl mb-2">🏳️‍🌈</div>
+                <p className="text-sm font-medium text-[var(--text-dark)]">Inclusive Ownership</p>
+              </div>
+            </div>
           </div>
           <div className="circular-icon mt-8 self-end">
-            <TrendingUp size={24} className="text-[var(--charcoal)]" />
+            <TrendingUp size={24} className="text-[var(--forest)]" />
           </div>
         </div>
       </section>
       
-      {/* Section 4: Feature */}
-      <section ref={featureRef} id="feature" className="section-pinned z-40">
+      {/* Section 4: Directory */}
+      <section ref={featureRef} id="directory" className="section-pinned z-40">
         {/* Background */}
         <div className="absolute inset-0">
           <img 
@@ -653,24 +671,73 @@ function App() {
         </div>
         
         {/* Card */}
-        <div className="feature-card paper-card w-[84vw] md:w-[74vw] h-auto md:h-[62vh] p-8 md:p-12 flex flex-col justify-between relative z-10">
+        <div className="feature-card paper-card w-[88vw] md:w-[80vw] h-auto p-8 md:p-12 flex flex-col relative z-10">
           <div>
-            <span className="label-tag text-[var(--text-dark-secondary)]">Dashboard</span>
+            <span className="label-tag text-[var(--text-dark-secondary)]">The Directory</span>
             <h2 className="feature-headline headline-2 text-[var(--text-dark)] mt-6">
-              Track. Categorize. Improve.
+              Find by values, not just category.
             </h2>
-            <p className="feature-body body-text text-[var(--text-dark-secondary)] max-w-[80%] mt-4">
-              Connect accounts securely. Tag purchases as Tucson Local / Chain / Unknown. Set a monthly target—and watch your Old Pueblo impact grow.
-            </p>
+            
+            {/* Value Filter Tags */}
+            <div className="flex flex-wrap gap-3 mt-6">
+              <button className="value-tag active">All Businesses</button>
+              <button className="value-tag">Living Wage</button>
+              <button className="value-tag">Eco-Friendly</button>
+              <button className="value-tag">Woman-Owned</button>
+              <button className="value-tag">BIPOC-Owned</button>
+              <button className="value-tag">LGBTQ+-Owned</button>
+            </div>
+            
+            {/* Sample Business Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
+              <div className="business-card">
+                <div className="flex items-start justify-between">
+                  <div>
+                    <h4 className="font-display font-bold text-lg text-[var(--text-dark)]">Time Market</h4>
+                    <p className="text-sm text-[var(--text-dark-secondary)]">Cafe & Grocery</p>
+                  </div>
+                  <span className="impact-badge">🌱 Eco</span>
+                </div>
+                <p className="text-sm text-[var(--text-dark-secondary)] mt-3">
+                  Local sourcing, living wages, and over 500 meals donated to community pantries this year.
+                </p>
+              </div>
+              
+              <div className="business-card">
+                <div className="flex items-start justify-between">
+                  <div>
+                    <h4 className="font-display font-bold text-lg text-[var(--text-dark)]">Antigone Books</h4>
+                    <p className="text-sm text-[var(--text-dark-secondary)]">Bookstore</p>
+                  </div>
+                  <span className="impact-badge">👩 Woman</span>
+                </div>
+                <p className="text-sm text-[var(--text-dark-secondary)] mt-3">
+                  Woman-owned since 1973. Hosts 50+ community events annually supporting local authors.
+                </p>
+              </div>
+              
+              <div className="business-card">
+                <div className="flex items-start justify-between">
+                  <div>
+                    <h4 className="font-display font-bold text-lg text-[var(--text-dark)]">Exo Roast Co.</h4>
+                    <p className="text-sm text-[var(--text-dark-secondary)]">Coffee</p>
+                  </div>
+                  <span className="impact-badge">💰 Living Wage</span>
+                </div>
+                <p className="text-sm text-[var(--text-dark-secondary)] mt-3">
+                  Fair-trade beans, living wages for all staff, and 2% of profits to local arts programs.
+                </p>
+              </div>
+            </div>
           </div>
-          <div className="circular-icon mt-8 self-end">
-            <ListChecks size={24} className="text-[var(--charcoal)]" />
-          </div>
+          <button className="cta-button-paper mt-8 self-start">
+            View Full Directory →
+          </button>
         </div>
       </section>
       
-      {/* Section 5: Collective */}
-      <section ref={collectiveRef} id="collective" className="section-pinned z-50">
+      {/* Section 5: Impact Stories */}
+      <section ref={collectiveRef} id="stories" className="section-pinned z-50">
         {/* Background */}
         <div className="absolute inset-0">
           <img 
@@ -683,26 +750,27 @@ function App() {
         
         {/* Cards */}
         <div className="relative z-10 w-full px-[6vw] flex flex-col md:flex-row gap-6 items-center justify-center">
-          {/* Left card */}
+          {/* Left card - Meet the Maker */}
           <div className="collective-card-left paper-card w-full md:w-[42vw] h-auto md:h-[64vh] p-8 md:p-10 flex flex-col justify-between">
             <div>
-              <span className="label-tag text-[var(--text-dark-secondary)]">Collective Goal</span>
+              <span className="label-tag text-[var(--text-dark-secondary)]">Meet the Maker</span>
               <h2 className="headline-2 text-[var(--text-dark)] mt-4">
-                Old Pueblo goals.
+                Maria's Story
               </h2>
               <p className="body-text text-[var(--text-dark-secondary)] max-w-[90%] mt-4">
-                When 50 Tucsonans shift just $50 to local businesses, we can fund a mural in Barrio Viejo or support Tucson Meet Yourself.
+                "I started Café Con Leche in 2018 with $500 and a dream. Today we employ 12 neighbors and source 80% of ingredients from Arizona farms. Growth means more jobs staying in our barrio."
               </p>
+              <p className="label-tag text-[var(--terracotta)] mt-6">— Maria Gonzalez, Café Con Leche</p>
             </div>
             <div className="circular-icon mt-6 self-end">
-              <Users size={24} className="text-[var(--charcoal)]" />
+              <Users size={24} className="text-[var(--forest)]" />
             </div>
           </div>
           
-          {/* Right card */}
+          {/* Right card - Community Impact */}
           <div className="collective-card-right paper-card w-full md:w-[42vw] h-auto md:h-[64vh] p-8 md:p-10 flex flex-col justify-between">
             <div>
-              <span className="label-tag text-[var(--text-dark-secondary)]">This Quarter</span>
+              <span className="label-tag text-[var(--text-dark-secondary)]">Community Impact</span>
               <h2 className="headline-1 text-[var(--text-dark)] mt-4">$48,200</h2>
               <p className="headline-3 text-[var(--text-dark)] mt-2">shifted to Tucson businesses</p>
               
@@ -714,18 +782,18 @@ function App() {
                     style={{ width: '72%', transformOrigin: 'left' }}
                   />
                 </div>
-                <p className="label-tag text-[var(--text-dark-secondary)] mt-3">72% toward our next Tucson project</p>
+                <p className="label-tag text-[var(--text-dark-secondary)] mt-3">72% toward funding a Barrio Viejo mural</p>
               </div>
             </div>
             <div className="circular-icon mt-6 self-end">
-              <Target size={24} className="text-[var(--charcoal)]" />
+              <Target size={24} className="text-[var(--forest)]" />
             </div>
           </div>
         </div>
       </section>
       
-      {/* Section 6: Story */}
-      <section ref={storyRef} id="story" className="section-pinned z-[60]">
+      {/* Section 6: Local Circularity */}
+      <section ref={storyRef} id="circularity" className="section-pinned z-[60]">
         {/* Background */}
         <div className="absolute inset-0">
           <img 
@@ -737,24 +805,47 @@ function App() {
         </div>
         
         {/* Card */}
-        <div className="story-card paper-card w-[84vw] md:w-[74vw] h-auto md:h-[62vh] p-8 md:p-12 flex flex-col justify-between relative z-10">
+        <div className="story-card paper-card w-[84vw] md:w-[74vw] h-auto p-8 md:p-12 flex flex-col relative z-10">
           <div>
-            <span className="story-content label-tag text-[var(--text-dark-secondary)]">Impact Narrative</span>
+            <span className="story-content label-tag text-[var(--text-dark-secondary)]">Local Circularity</span>
             <h2 className="story-content headline-2 text-[var(--text-dark)] mt-6">
-              Your Tucson impact story.
+              See how your dollar moves.
             </h2>
             <p className="story-content body-text text-[var(--text-dark-secondary)] max-w-[80%] mt-4">
-              Get a clear monthly story: how many hours of Tucson wages your spending supported—and what that means for your neighborhood.
+              When you shop local, your money creates a ripple effect through the community.
             </p>
+            
+            {/* Circularity visualization */}
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-8">
+              <div className="text-center p-4 bg-[var(--terracotta)]/10 rounded-xl flex-1">
+                <p className="text-sm font-medium text-[var(--text-dark)]">Your $10 at</p>
+                <p className="font-display font-bold text-[var(--terracotta)]">Time Market</p>
+              </div>
+              <div className="text-2xl">→</div>
+              <div className="text-center p-4 bg-[var(--forest)]/10 rounded-xl flex-1">
+                <p className="text-sm font-medium text-[var(--text-dark)]">Pays wages to</p>
+                <p className="font-display font-bold text-[var(--forest)]">Local Staff</p>
+              </div>
+              <div className="text-2xl">→</div>
+              <div className="text-center p-4 bg-[var(--ochre)]/20 rounded-xl flex-1">
+                <p className="text-sm font-medium text-[var(--text-dark)]">Who spend at</p>
+                <p className="font-display font-bold text-[var(--ochre)]">4th Ave Shops</p>
+              </div>
+              <div className="text-2xl">→</div>
+              <div className="text-center p-4 bg-[var(--sage)]/20 rounded-xl flex-1">
+                <p className="text-sm font-medium text-[var(--text-dark)]">Taxes fund</p>
+                <p className="font-display font-bold text-[var(--forest)]">Reid Park</p>
+              </div>
+            </div>
           </div>
           <div className="story-content circular-icon mt-8 self-end">
-            <FileText size={24} className="text-[var(--charcoal)]" />
+            <FileText size={24} className="text-[var(--forest)]" />
           </div>
         </div>
       </section>
       
-      {/* Section 7: Join */}
-      <section ref={joinRef} id="join" className="relative z-[70] bg-[var(--paper)] min-h-screen py-20">
+      {/* Section 7: Nominate */}
+      <section ref={joinRef} id="nominate" className="relative z-[70] bg-[var(--paper)] min-h-screen py-20">
         {/* Grain overlay for paper section */}
         <div className="absolute inset-0 opacity-[0.03] mix-blend-multiply pointer-events-none"
           style={{
@@ -768,11 +859,20 @@ function App() {
             {/* Left - Headline */}
             <div className="join-headline w-full md:max-w-[40vw] pt-[10vh]">
               <h2 className="headline-1 text-[var(--text-dark)]">
-                Be part of the ledger.
+                Know a progressive business?
               </h2>
               <p className="body-text text-[var(--text-dark-secondary)] mt-6">
-                Early access + community updates. No spam.
+                Help us grow the directory. Nominate a Tucson business that's investing in our community through living wages, sustainable practices, or local reinvestment.
               </p>
+              <div className="mt-8 p-6 bg-[var(--forest)]/10 rounded-xl">
+                <p className="label-tag text-[var(--forest)] mb-2">What we look for</p>
+                <ul className="space-y-2 text-sm text-[var(--text-dark-secondary)]">
+                  <li>✓ Living wages for employees</li>
+                  <li>✓ Local or sustainable sourcing</li>
+                  <li>✓ Community reinvestment</li>
+                  <li>✓ Inclusive ownership or practices</li>
+                </ul>
+              </div>
             </div>
             
             {/* Right - Form */}
@@ -780,90 +880,97 @@ function App() {
               {!formSubmitted ? (
                 <form onSubmit={handleFormSubmit} className="space-y-6">
                   <div>
-                    <label className="label-tag text-[var(--text-secondary)] mb-2 block">Name</label>
+                    <label className="label-tag text-[var(--text-secondary)] mb-2 block">Business Name</label>
                     <input 
                       type="text" 
-                      placeholder="Your name"
+                      placeholder="e.g., Time Market"
                       className="form-input"
                       required
                     />
                   </div>
                   <div>
-                    <label className="label-tag text-[var(--text-secondary)] mb-2 block">Email</label>
+                    <label className="label-tag text-[var(--text-secondary)] mb-2 block">Location / Neighborhood</label>
+                    <input 
+                      type="text" 
+                      placeholder="4th Ave, Downtown, Main Gate..."
+                      className="form-input"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="label-tag text-[var(--text-secondary)] mb-2 block">Why nominate them?</label>
+                    <textarea 
+                      placeholder="Tell us why this business deserves recognition..."
+                      className="form-input min-h-[100px] resize-none"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="label-tag text-[var(--text-secondary)] mb-2 block">Your Email (optional)</label>
                     <input 
                       type="email" 
                       placeholder="you@example.com"
                       className="form-input"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label className="label-tag text-[var(--text-secondary)] mb-2 block">Neighborhood</label>
-                    <input 
-                      type="text" 
-                      placeholder="Sam Hughes, Armory Park, Iron Horse..."
-                      className="form-input"
-                      required
                     />
                   </div>
                   <button type="submit" className="cta-button-paper w-full justify-center mt-4">
-                    Join the list
+                    Submit Nomination
                   </button>
                   <p className="text-xs text-[var(--text-secondary)] text-center mt-4">
-                    By joining, you agree to receive updates about Tucson Impact Ledger.
+                    We'll review nominations and reach out to the business for verification.
                   </p>
                 </form>
               ) : (
                 <div className="text-center py-12">
                   <div className="circular-icon mx-auto mb-6">
-                    <Award size={32} className="text-[var(--lime)]" />
+                    <Award size={32} className="text-[var(--terracotta)]" />
                   </div>
-                  <h3 className="headline-3 text-[var(--paper)]">You&apos;re on the list!</h3>
+                  <h3 className="headline-3 text-[var(--paper)]">Thank you!</h3>
                   <p className="body-text text-[var(--text-secondary)] mt-4">
-                    We&apos;ll be in touch with early access details soon.
+                    We&apos;ll review this nomination and reach out to the business.
                   </p>
                 </div>
               )}
             </div>
           </div>
           
-          {/* How it works */}
+          {/* How Conscious Commerce Works */}
           <div className="how-it-works-section mt-24 pt-16 border-t border-[var(--charcoal)]/10">
-            <h3 className="label-tag text-[var(--text-dark-secondary)] mb-10 text-center">How it works</h3>
+            <h3 className="label-tag text-[var(--text-dark-secondary)] mb-10 text-center">How Conscious Commerce Works</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="how-it-works-card text-center">
-                <div className="w-16 h-16 rounded-full bg-[var(--charcoal)]/5 flex items-center justify-center mx-auto mb-6">
-                  <Wallet size={28} className="text-[var(--charcoal)]" />
+                <div className="w-16 h-16 rounded-full bg-[var(--terracotta)]/10 flex items-center justify-center mx-auto mb-6">
+                  <Target size={28} className="text-[var(--terracotta)]" />
                 </div>
                 <h4 className="font-display font-bold text-lg text-[var(--text-dark)]">
-                  Connect accounts securely.
+                  Find by values.
                 </h4>
                 <p className="body-text text-[var(--text-dark-secondary)] mt-3 max-w-[80%] mx-auto">
-                  Link your bank accounts with bank-level encryption and security.
+                  Filter businesses by what matters: living wages, sustainability, inclusive ownership.
                 </p>
               </div>
               
               <div className="how-it-works-card text-center">
-                <div className="w-16 h-16 rounded-full bg-[var(--charcoal)]/5 flex items-center justify-center mx-auto mb-6">
-                  <Tag size={28} className="text-[var(--charcoal)]" />
+                <div className="w-16 h-16 rounded-full bg-[var(--forest)]/10 flex items-center justify-center mx-auto mb-6">
+                  <Wallet size={28} className="text-[var(--forest)]" />
                 </div>
                 <h4 className="font-display font-bold text-lg text-[var(--text-dark)]">
-                  Tag spending in seconds.
+                  Shift your spending.
                 </h4>
                 <p className="body-text text-[var(--text-dark-secondary)] mt-3 max-w-[80%] mx-auto">
-                  Categorize purchases as Local, Chain, or Unknown with one tap.
+                  Move just $50/month from chains to local businesses that share your values.
                 </p>
               </div>
               
               <div className="how-it-works-card text-center">
-                <div className="w-16 h-16 rounded-full bg-[var(--charcoal)]/5 flex items-center justify-center mx-auto mb-6">
-                  <Award size={28} className="text-[var(--charcoal)]" />
+                <div className="w-16 h-16 rounded-full bg-[var(--ochre)]/15 flex items-center justify-center mx-auto mb-6">
+                  <Award size={28} className="text-[var(--ochre)]" />
                 </div>
                 <h4 className="font-display font-bold text-lg text-[var(--text-dark)]">
-                  See Tucson wins.
+                  Watch Tucson thrive.
                 </h4>
                 <p className="body-text text-[var(--text-dark-secondary)] mt-3 max-w-[80%] mx-auto">
-                  Watch Tucson&apos;s collective impact grow and celebrate community milestones.
+                  See collective impact grow and celebrate community milestones together.
                 </p>
               </div>
             </div>
@@ -872,21 +979,21 @@ function App() {
           {/* Footer */}
           <footer className="mt-24 pt-8 border-t border-[var(--charcoal)]/10 flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="font-display font-bold text-lg text-[var(--text-dark)]">
-              Tucson Impact Ledger
+              Tucson Local
             </div>
             <div className="flex items-center gap-6">
-              <button className="text-sm text-[var(--text-dark-secondary)] hover:text-[var(--text-dark)] transition-colors">
-                Privacy
+              <button onClick={() => scrollToSection('standards')} className="text-sm text-[var(--text-dark-secondary)] hover:text-[var(--text-dark)] transition-colors">
+                Our Standards
               </button>
               <button className="text-sm text-[var(--text-dark-secondary)] hover:text-[var(--text-dark)] transition-colors">
-                Terms
+                Privacy
               </button>
               <button className="text-sm text-[var(--text-dark-secondary)] hover:text-[var(--text-dark)] transition-colors">
                 Contact
               </button>
             </div>
             <p className="text-sm text-[var(--text-dark-secondary)]">
-              © Tucson Impact Ledger · Made with ❤️ in the Old Pueblo
+              © Tucson Local · Made with ❤️ in the Old Pueblo
             </p>
           </footer>
         </div>
