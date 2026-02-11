@@ -477,6 +477,9 @@ function App() {
           <button onClick={() => scrollToSection('directory')} className="text-[var(--text-secondary)] hover:text-[var(--paper)] transition-colors text-sm font-medium">
             Directory
           </button>
+          <button onClick={() => scrollToSection('community-roots')} className="text-[var(--text-secondary)] hover:text-[var(--paper)] transition-colors text-sm font-medium">
+            Community Roots
+          </button>
           <button onClick={() => scrollToSection('stories')} className="text-[var(--text-secondary)] hover:text-[var(--paper)] transition-colors text-sm font-medium">
             Impact Stories
           </button>
@@ -502,6 +505,9 @@ function App() {
         <div className="fixed inset-0 z-40 bg-[var(--charcoal)] flex flex-col items-center justify-center gap-8">
           <button onClick={() => scrollToSection('directory')} className="text-[var(--paper)] text-2xl font-display font-bold">
             Directory
+          </button>
+          <button onClick={() => scrollToSection('community-roots')} className="text-[var(--paper)] text-2xl font-display font-bold">
+            Community Roots
           </button>
           <button onClick={() => scrollToSection('stories')} className="text-[var(--paper)] text-2xl font-display font-bold">
             Impact Stories
@@ -844,6 +850,164 @@ function App() {
           <button className="cta-button-paper mt-8 self-start">
             View Full Directory →
           </button>
+        </div>
+      </section>
+
+      {/* Section: Community Roots - Grassroots Organizations */}
+      <section id="community-roots" className="section-pinned z-50 bg-[var(--sage)]/20">
+        <div className="w-full px-[6vw]">
+          <div className="text-center mb-12">
+            <span className="label-tag text-[var(--forest)]">Beyond Commerce</span>
+            <h2 className="headline-1 text-[var(--text-dark)] mt-4">
+              Community Roots
+            </h2>
+            <p className="body-text text-[var(--text-dark-secondary)] max-w-2xl mx-auto mt-4">
+              These grassroots organizations are the backbone of Tucson's mutual aid network. 
+              They don't sell products—they build power, share resources, and take care of each other.
+            </p>
+          </div>
+
+          {/* Ways to Support */}
+          <div className="flex flex-wrap justify-center gap-3 mb-10">
+            <span className="px-4 py-2 bg-[var(--forest)] text-white rounded-full text-sm font-medium">
+              🤝 Volunteer
+            </span>
+            <span className="px-4 py-2 bg-[var(--terracotta)] text-white rounded-full text-sm font-medium">
+              💚 Donate
+            </span>
+            <span className="px-4 py-2 bg-[var(--ochre)] text-[var(--charcoal)] rounded-full text-sm font-medium">
+              📢 Amplify
+            </span>
+          </div>
+
+          {/* Grassroots Orgs Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            
+            {/* ALMA */}
+            <div className="paper-card p-6 border-l-4 border-[var(--forest)]">
+              <h3 className="font-serif text-xl text-[var(--text-dark)]">ALMA</h3>
+              <p className="text-sm text-[var(--forest)] font-medium mb-2">Amphi Liberation Mutual Aid</p>
+              <p className="text-sm text-[var(--text-dark-secondary)] mt-2">
+                Community-led mutual aid collective providing direct support to Tucsonans in need. Redistributes resources, organizes community fridges, and builds solidarity networks.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                <span className="text-xs px-2 py-1 bg-[var(--sage)]/30 rounded">Mutual Aid</span>
+                <span className="text-xs px-2 py-1 bg-[var(--sage)]/30 rounded">Food Access</span>
+              </div>
+            </div>
+
+            {/* Flowers & Bullets */}
+            <div className="paper-card p-6 border-l-4 border-[var(--terracotta)]">
+              <h3 className="font-serif text-xl text-[var(--text-dark)]">Flowers & Bullets</h3>
+              <p className="text-sm text-[var(--terracotta)] font-medium mb-2">Community Collective</p>
+              <p className="text-sm text-[var(--text-dark-secondary)] mt-2">
+                Radical community space offering free programming, political education, and mutual aid. A hub for organizers building a more just Tucson.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                <span className="text-xs px-2 py-1 bg-[var(--sage)]/30 rounded">Political Ed</span>
+                <span className="text-xs px-2 py-1 bg-[var(--sage)]/30 rounded">Community Space</span>
+              </div>
+            </div>
+
+            {/* Tucson Food Share */}
+            <div className="paper-card p-6 border-l-4 border-[var(--ochre)]">
+              <h3 className="font-serif text-xl text-[var(--text-dark)]">Tucson Food Share</h3>
+              <p className="text-sm text-[var(--ochre)] font-medium mb-2">Food Solidarity Network</p>
+              <p className="text-sm text-[var(--text-dark-secondary)] mt-2">
+                Volunteer-run food rescue and redistribution. Redirects surplus from local farms and grocers to families facing food insecurity.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                <span className="text-xs px-2 py-1 bg-[var(--sage)]/30 rounded">Food Rescue</span>
+                <span className="text-xs px-2 py-1 bg-[var(--sage)]/30 rounded">Zero Waste</span>
+              </div>
+            </div>
+
+            {/* BICAS */}
+            <div className="paper-card p-6 border-l-4 border-[var(--forest)]">
+              <h3 className="font-serif text-xl text-[var(--text-dark)]">BICAS</h3>
+              <p className="text-sm text-[var(--forest)] font-medium mb-2">Bicycle Inter-Community Art & Salvage</p>
+              <p className="text-sm text-[var(--text-dark-secondary)] mt-2">
+                DIY bike shop teaching repair skills to anyone. Provides affordable transportation and builds self-reliance through hands-on learning.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                <span className="text-xs px-2 py-1 bg-[var(--sage)]/30 rounded">DIY Skills</span>
+                <span className="text-xs px-2 py-1 bg-[var(--sage)]/30 rounded">Transportation</span>
+              </div>
+            </div>
+
+            {/* Casa Alitas */}
+            <div className="paper-card p-6 border-l-4 border-[var(--terracotta)]">
+              <h3 className="font-serif text-xl text-[var(--text-dark)]">Casa Alitas</h3>
+              <p className="text-sm text-[var(--terracotta)] font-medium mb-2">Migrant Welcome Center</p>
+              <p className="text-sm text-[var(--text-dark-secondary)] mt-2">
+                Emergency shelter and humanitarian aid for asylum-seeking families. Provides food, clothing, medical care, and travel assistance.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                <span className="text-xs px-2 py-1 bg-[var(--sage)]/30 rounded">Immigrant Rights</span>
+                <span className="text-xs px-2 py-1 bg-[var(--sage)]/30 rounded">Shelter</span>
+              </div>
+            </div>
+
+            {/* Primavera Foundation */}
+            <div className="paper-card p-6 border-l-4 border-[var(--ochre)]">
+              <h3 className="font-serif text-xl text-[var(--text-dark)]">Primavera Foundation</h3>
+              <p className="text-sm text-[var(--ochre)] font-medium mb-2">Housing & Economic Justice</p>
+              <p className="text-sm text-[var(--text-dark-secondary)] mt-2">
+                Building pathways out of poverty through housing, workforce development, and financial empowerment. 50+ years serving Tucson.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                <span className="text-xs px-2 py-1 bg-[var(--sage)]/30 rounded">Housing</span>
+                <span className="text-xs px-2 py-1 bg-[var(--sage)]/30 rounded">Job Training</span>
+              </div>
+            </div>
+
+            {/* Community Roots Collective */}
+            <div className="paper-card p-6 border-l-4 border-[var(--forest)]">
+              <h3 className="font-serif text-xl text-[var(--text-dark)]">Community Roots Collective</h3>
+              <p className="text-sm text-[var(--forest)] font-medium mb-2">Food Sovereignty</p>
+              <p className="text-sm text-[var(--text-dark-secondary)] mt-2">
+                Community garden network growing food sovereignty in Tucson neighborhoods. Free seeds, workshops, and garden plots for all.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                <span className="text-xs px-2 py-1 bg-[var(--sage)]/30 rounded">Urban Farming</span>
+                <span className="text-xs px-2 py-1 bg-[var(--sage)]/30 rounded">Food Justice</span>
+              </div>
+            </div>
+
+            {/* Southern Arizona Gender Alliance */}
+            <div className="paper-card p-6 border-l-4 border-[var(--terracotta)]">
+              <h3 className="font-serif text-xl text-[var(--text-dark)]">Southern AZ Gender Alliance</h3>
+              <p className="text-sm text-[var(--terracotta)] font-medium mb-2">SAGA</p>
+              <p className="text-sm text-[var(--text-dark-secondary)] mt-2">
+                Support, advocacy, and community for transgender and gender-diverse Tucsonans. Peer support groups, name change clinics, and mutual aid.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                <span className="text-xs px-2 py-1 bg-[var(--sage)]/30 rounded">LGBTQ+</span>
+                <span className="text-xs px-2 py-1 bg-[var(--sage)]/30 rounded">Peer Support</span>
+              </div>
+            </div>
+
+            {/* Poder in Action */}
+            <div className="paper-card p-6 border-l-4 border-[var(--ochre)]">
+              <h3 className="font-serif text-xl text-[var(--text-dark)]">Poder in Action</h3>
+              <p className="text-sm text-[var(--ochre)] font-medium mb-2">Community Power Building</p>
+              <p className="text-sm text-[var(--text-dark-secondary)] mt-2">
+                Youth-led movement for racial and economic justice. Campaigns against police violence, for housing rights, and immigrant dignity.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                <span className="text-xs px-2 py-1 bg-[var(--sage)]/30 rounded">Racial Justice</span>
+                <span className="text-xs px-2 py-1 bg-[var(--sage)]/30 rounded">Youth Led</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div className="text-center mt-10">
+            <p className="text-sm text-[var(--text-dark-secondary)] max-w-lg mx-auto">
+              These orgs run on community power—not profit. 
+              <span className="text-[var(--forest)] font-medium"> Follow them, show up, share what you can.</span>
+            </p>
+          </div>
         </div>
       </section>
       
